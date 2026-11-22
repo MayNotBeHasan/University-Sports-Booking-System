@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | SAU Sports Booking</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="dashboard-header">
+        <div class="header-brand">
+            <div class="brand-icon">S</div>
+            <div>
+                <h2>SAU Sports Booking</h2>
+                <p>Administrator Portal</p>
+            </div>
+        </div>
+
+        <button type="button" id="logoutButton" class="logout-button">
+            Logout
+        </button>
+    </header>
+
+    <main class="main-dashboard">
+
+        <section class="welcome-section">
+            <h1 id="welcomeMessage">Welcome, Admin!</h1>
+            <p>Manage sports facilities, time slots and student bookings.</p>
+        </section>
+
+        <p id="message" class="dashboard-message"></p>
+
+        <!-- SYSTEM OVERVIEW -->
+
+        <section class="dashboard-section">
+            <div class="section-heading">
+                <h2>System Overview</h2>
+                <p>Current system statistics.</p>
+            </div>
+
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <h2 id="facilityCount">-</h2>
+                    <p>Facilities</p>
+                </div>
+
+                <div class="stat-card">
+                    <h2 id="slotCount">-</h2>
+                    <p>Total Time Slots</p>
+                </div>
+
+                <div class="stat-card">
+                    <h2 id="bookingCount">-</h2>
+                    <p>Total Bookings</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ADD FACILITY -->
+
+        <section class="dashboard-section">
+            <div class="section-heading">
+                <h2>Add Sports Facility</h2>
+                <p>Register a new sports facility in the system.</p>
+            </div>
+
+            <form id="facilityForm">
+
+                <div class="filter-container">
+
+                    <div class="filter-group">
+                        <label for="facilityName">Facility name</label>
+                        <input
+                            type="text"
+                            id="facilityName"
+                            placeholder="e.g. Volleyball Court 2"
+                            required
+                        >
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="facilitySport">Sport</label>
+                        <select id="facilitySport" required>
+                            <option value="">Select sport</option>
+                            <option value="Cricket">Cricket</option>
+                            <option value="Football">Football</option>
+                            <option value="Volleyball">Volleyball</option>
+                            <option value="Table Tennis">Table Tennis</option>
+                            <option value="Badminton">Badminton</option>
+                            <option value="Basketball">Basketball</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="facilityLocation">Location</label>
+                        <input
+                            type="text"
+                            id="facilityLocation"
+                            placeholder="e.g. Sports Complex"
+                            required
+                        >
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="facilityCapacity">Capacity</label>
+                        <input
+                            type="number"
+                            id="facilityCapacity"
+                            min="1"
+                            placeholder="e.g. 20"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+                <button type="submit" id="addFacilityButton">
+                    Add Facility
+                </button>
+
+            </form>
+        </section>
+
+        <!-- CREATE TIME SLOT -->
+
+        <section class="dashboard-section">
+            <div class="section-heading">
+                <h2>Create Time Slots</h2>
+                <p>Schedule a time slot for an existing facility.</p>
+            </div>
+
+            <form id="slotForm">
+
+                <div class="filter-container">
+
+                    <div class="filter-group">
+                        <label for="slotFacility">Select facility</label>
+                        <select id="slotFacility" required>
+                            <option value="">Loading facilities...</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="slotDate">Date</label>
+                        <input type="date" id="slotDate" required>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="startTime">Start time</label>
+                        <input type="time" id="startTime" required>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="endTime">End time</label>
+                        <input type="time" id="endTime" required>
+                    </div>
+
+                </div>
+
+                <button type="submit" id="createSlotButton">
+                    Create Time Slot
+                </button>
+
+            </form>
+        </section>
+
+        <!-- ALL BOOKINGS -->
+
+        <section class="dashboard-section">
+            <div class="section-heading">
+                <h2>All Student Bookings</h2>
+                <p>View and filter booking records across the university.</p>
+            </div>
+
+            <div class="filter-container">
+                <div class="filter-group">
+                    <label for="bookingStatusFilter">Filter by booking status</label>
+                    <select id="bookingStatusFilter">
+                        <option value="ALL">All Bookings</option>
+                        <option value="CONFIRMED">Confirmed</option>
+                        <option value="CANCELLED">Cancelled</option>
+                    </select>
+                </div>
+            </div>
+
+            <p id="bookingResultsCount">Loading bookings...</p>
+
+            <div id="bookingsContainer" class="bookings-list">
+                <p>Loading bookings...</p>
+            </div>
+        </section>
+
+        <!-- FACILITIES LIST -->
+
+        <section class="dashboard-section">
+            <div class="section-heading">
+                <h2>Registered Facilities</h2>
+                <p>View all sports facilities in the system.</p>
+            </div>
+
+            <div id="facilitiesContainer" class="bookings-list">
+                <p>Loading facilities...</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="dashboard-footer">
+        <p>SAU Sports Facility Booking System — Administrator Portal</p>
+    </footer>
+
+    <script src="js/admin.js"></script>
+
+</body>
+</html>

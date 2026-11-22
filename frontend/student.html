@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard | SAU Sports Booking</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="dashboard-header">
+        <div class="header-brand">
+            <div class="brand-icon">S</div>
+            <div>
+                <h2>SAU Sports Booking</h2>
+                <p>Student Portal</p>
+            </div>
+        </div>
+
+        <button type="button" id="logoutButton" class="logout-button">
+            Logout
+        </button>
+    </header>
+
+    <main class="main-dashboard">
+
+        <section class="welcome-section">
+            <h1 id="welcomeMessage">Welcome!</h1>
+            <p id="userEmail"></p>
+            <p>Find a facility, choose a time and book your next game.</p>
+        </section>
+
+        <p id="message" class="dashboard-message"></p>
+
+        <section class="dashboard-section">
+            <div class="section-heading">
+                <div>
+                    <h2>Book a sports facility</h2>
+                    <p>Choose a sport facility and find an available slot.</p>
+                </div>
+            </div>
+
+            <div class="filter-container">
+                <div class="filter-group">
+                    <label for="facilitySelect">Select facility</label>
+                    <select id="facilitySelect"></select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="dateFilter">Select date</label>
+                    <input type="date" id="dateFilter">
+                </div>
+            </div>
+
+            <div id="slotsContainer" class="slots-grid">
+                <p>Loading available slots...</p>
+            </div>
+        </section>
+
+        <section class="dashboard-section">
+            <div class="section-heading">
+                <div>
+                    <h2>My bookings</h2>
+                    <p>View and manage your facility bookings.</p>
+                </div>
+            </div>
+
+            <div id="bookingsContainer" class="bookings-list">
+                <p>Loading your bookings...</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="dashboard-footer">
+        <p>SAU Sports Facility Booking System</p>
+    </footer>
+
+    <script src="js/student.js"></script>
+
+</body>
+</html>
