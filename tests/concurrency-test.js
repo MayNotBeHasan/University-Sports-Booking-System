@@ -1,7 +1,7 @@
 const http = require('http');
 
 const TOTAL_REQUESTS = 50;
-const SLOT_ID = 6703;
+const SLOT_ID = 6703;  /* change this number to anythins */
 
 function login() {
     return new Promise((resolve, reject) => {
